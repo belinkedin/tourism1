@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kodai Hills Stay — Where the Mist Meets Magic | Kodaikanal</title>
+<meta name="description" content="Handpicked cottages, camps & packages in Kodaikanal, the Princess of Hill Stations. Book your misty mountain escape at 2,133m elevation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--green:oklch(25% 0.08 145);
+--green-mid:oklch(30% 0.07 145);
+--gold:oklch(72% 0.14 85);
+--gold-dim:oklch(62% 0.12 85);
+--cream:oklch(97% 0.01 90);
+--charcoal:oklch(18% 0.01 250);
+--brown:oklch(40% 0.06 60);
+--mist:rgba(255,255,255,0.12);
+--ff-heading:'Playfair Display',Georgia,serif;
+--ff-body:'DM Sans',system-ui,sans-serif;
+--ff-mono:'DM Mono',monospace;
+--ease-out-expo:cubic-bezier(0.16,1,0.3,1);
+--ease-out-quart:cubic-bezier(0.25,1,0.5,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--ff-body);color:var(--charcoal);background:var(--cream);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* ========== SECTION REVEAL ========== */
+.reveal-section{opacity:0;transform:translateY(40px);transition:opacity 0.6s var(--ease-out-quart),transform 0.6s var(--ease-out-quart)}
+.reveal-section.is-visible{opacity:1;transform:translateY(0)}
+.reveal-section .reveal-child{opacity:0;transform:translateY(25px);transition:opacity 0.5s var(--ease-out-quart),transform 0.5s var(--ease-out-quart)}
+.reveal-section.is-visible .reveal-child{opacity:1;transform:translateY(0)}
+
+/* ========== FAB ========== */
+.fab-container{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.fab-btn{display:flex;align-items:center;gap:8px;padding:12px 20px;border-radius:50px;font-weight:600;font-size:0.9rem;color:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:transform 0.2s var(--ease-out-expo),box-shadow 0.2s}
+.fab-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(0,0,0,0.3)}
+.fab-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.fab-wa{background:#25d366;animation:fabPulse 2.5s ease-in-out infinite}
+.fab-call{background:var(--gold);color:var(--charcoal)}
+@keyframes fabPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.3)}50%{box-shadow:0 4px 20px rgba(37,211,102,0.05),0 0 0 10px rgba(37,211,102,0)}}
+
+/* ========== NAVBAR ========== */
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s ease,color 0.3s ease,backdrop-filter 0.3s ease,padding 0.3s ease}
+.navbar.scrolled{background:rgba(20,35,25,0.95);backdrop-filter:blur(10px);padding:10px 40px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--ff-heading);font-size:1.3rem;font-weight:600;color:#fff;transition:color 0.3s}
+.navbar.scrolled .nav-logo{color:var(--cream)}
+.nav-logo svg{width:32px;height:32px}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.85);font-size:0.92rem;font-weight:500;letter-spacing:0.02em;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width 0.3s var(--ease-out-expo)}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%}
+.nav-links a:hover{color:#fff}
+.nav-links a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px}
+.navbar.scrolled .nav-links a{color:rgba(255,255,255,0.8)}
+.navbar.scrolled .nav-links a:hover{color:#fff}
+.nav-actions{display:flex;gap:10px}
+.nav-btn{padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:600;transition:transform 0.15s,opacity 0.2s}
+.nav-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.nav-btn-wa{background:#25d366;color:#fff}
+.nav-btn-call{background:var(--gold);color:var(--charcoal)}
+.nav-btn:hover{transform:scale(1.04)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;transition:transform 0.3s,opacity 0.3s}
+.navbar.scrolled .nav-hamburger span{background:var(--cream)}
+
+/* Mobile Menu */
+.mobile-menu{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--green);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.35s var(--ease-out-expo)}
+.mobile-menu.open{opacity:1;pointer-events:all}
+.mobile-menu a{color:var(--cream);font-family:var(--ff-heading);font-size:1.8rem;font-weight:500;transition:color 0.2s}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.mobile-menu-close{position:absolute;top:20px;right:28px;color:var(--cream);font-size:2rem;background:none;border:none;cursor:pointer}
+.mobile-menu-close:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.mobile-menu-actions{display:flex;gap:12px;margin-top:16px}
+
+/* ========== HERO ========== */
+.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(to bottom,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.6) 100%),url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85');background-size:cover;background-position:center;will-change:transform;transform:translateZ(0)}
+.mist-layer{position:absolute;width:140%;height:30%;background:linear-gradient(transparent,rgba(255,255,255,0.15),transparent);border-radius:50%;pointer-events:none}
+.mist-layer:nth-child(1){top:30%;left:-20%;animation:mistDrift 12s ease-in-out infinite}
+.mist-layer:nth-child(2){top:50%;left:-10%;animation:mistDrift 18s ease-in-out infinite reverse}
+.mist-layer:nth-child(3){top:65%;left:-25%;animation:mistDrift 24s ease-in-out infinite}
+@keyframes mistDrift{0%{transform:translateX(-10%) scaleY(1);opacity:0.08}50%{opacity:0.14}100%{transform:translateX(10%) scaleY(1.1);opacity:0.08}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px}
+.hero-badge{display:inline-block;padding:8px 20px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:50px;color:rgba(255,255,255,0.9);font-family:var(--ff-mono);font-size:0.8rem;letter-spacing:0.04em;margin-bottom:28px}
+.hero-title{font-family:var(--ff-heading);font-size:clamp(2.4rem,6vw,4.5rem);color:#fff;line-height:1.12;font-weight:600;margin-bottom:20px}
+.hero-title .word{display:inline-block;opacity:0;transform:translateY(30px);transition:opacity 0.8s var(--ease-out-quart),transform 0.8s var(--ease-out-quart)}
+.hero-title .word.show{opacity:1;transform:translateY(0)}
+.hero-sub{color:rgba(255,255,255,0.82);font-size:clamp(1rem,2vw,1.25rem);margin-bottom:36px;font-weight:400;max-width:580px;margin-left:auto;margin-right:auto}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:600;font-size:0.95rem;transition:transform 0.2s var(--ease-out-expo),box-shadow 0.2s}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.btn-gold-outline{border:2px solid var(--gold);color:var(--gold)}
+.btn-gold-outline:hover{background:var(--gold);color:var(--charcoal);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--charcoal)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.btn-dark{background:var(--charcoal);color:#fff}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.78rem;font-family:var(--ff-mono);letter-spacing:0.08em;animation:scrollBounce 2s ease-in-out infinite}
+@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.scroll-indicator svg{width:20px;height:20px;stroke:rgba(255,255,255,0.6);fill:none;stroke-width:2}
+
+/* ========== ABOUT / STATS ========== */
+.stats-section{background:var(--green);padding:64px 40px;overflow:hidden}
+.stats-row{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.stat-item{text-align:center;color:var(--cream)}
+.stat-number{font-family:var(--ff-heading);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;color:var(--gold)}
+.stat-label{font-size:0.85rem;opacity:0.75;margin-top:4px;font-family:var(--ff-mono);letter-spacing:0.04em}
+.about-section{padding:100px 40px;max-width:1200px;margin:0 auto}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text{position:relative;padding-left:32px}
+.about-text::before{content:'\201C';position:absolute;top:-20px;left:-8px;font-family:var(--ff-heading);font-size:6rem;color:var(--gold);opacity:0.25;line-height:1}
+.about-text p{font-size:1.08rem;line-height:1.85;color:var(--charcoal)}
+.about-img{border-radius:12px;overflow:hidden;aspect-ratio:3/4;max-height:540px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.parallax-strip{height:40vh;background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80');background-attachment:fixed;background-size:cover;background-position:center;margin-top:80px}
+
+/* ========== ACCOMMODATIONS ========== */
+.stays-section{padding:100px 40px;max-width:1300px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:64px}
+.section-header h2{font-family:var(--ff-heading);font-size:clamp(1.8rem,4vw,2.8rem);color:var(--charcoal);margin-bottom:12px}
+.section-header p{color:var(--brown);font-size:1.05rem;max-width:500px;margin:0 auto}
+.stays-grid{display:grid;gap:20px}
+.stays-row-1{display:grid;grid-template-columns:1.5fr 1fr;gap:20px}
+.stays-row-2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.stays-row-3{display:grid;grid-template-columns:1fr 1.5fr;gap:20px}
+.stay-card{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;transition:transform 0.15s ease-out}
+.stay-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s var(--ease-out-expo)}
+.stay-card:hover img{transform:scale(1.06)}
+.stay-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.1) 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transition:background 0.3s}
+.stay-card:hover .stay-card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.3) 100%)}
+.stay-badge{position:absolute;top:16px;left:16px;padding:5px 14px;border-radius:50px;font-size:0.75rem;font-weight:600;background:var(--gold);color:var(--charcoal);font-family:var(--ff-mono)}
+.stay-card-title{font-family:var(--ff-heading);font-size:1.35rem;color:#fff;margin-bottom:4px}
+.stay-card-desc{color:rgba(255,255,255,0.8);font-size:0.88rem}
+.stay-card-explore{display:inline-flex;align-items:center;gap:6px;margin-top:12px;color:var(--gold);font-weight:600;font-size:0.88rem;opacity:0;transform:translateY(8px);transition:opacity 0.3s,transform 0.3s var(--ease-out-expo)}
+.stay-card:hover .stay-card-explore{opacity:1;transform:translateY(0)}
+.stay-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Cottage sub-section */
+.cottage-sub{display:none;padding:40px 0;animation:fadeSlideIn 0.4s var(--ease-out-quart)}
+.cottage-sub.open{display:block}
+.cottage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:24px}
+.cottage-card{background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(0,0,0,0.06);transition:transform 0.2s var(--ease-out-expo),box-shadow 0.2s}
+.cottage-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08)}
+.cottage-card h4{font-family:var(--ff-heading);font-size:1.2rem;margin-bottom:6px}
+.cottage-card p{font-size:0.9rem;color:var(--brown);margin-bottom:16px}
+.cottage-card .btn{width:100%;justify-content:center;padding:10px 20px;font-size:0.85rem}
+
+/* ========== MODAL ========== */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0);z-index:2000;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:background 0.4s}
+.modal-backdrop.open{background:rgba(0,0,0,0.7);pointer-events:all}
+.modal{background:var(--cream);border-radius:20px;width:92%;max-width:780px;max-height:88vh;overflow-y:auto;transform:translateY(60px);opacity:0;transition:transform 0.4s var(--ease-out-quart),opacity 0.4s;position:relative}
+.modal-backdrop.open .modal{transform:translateY(0);opacity:1}
+.modal-close{position:sticky;top:0;float:right;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:rgba(255,255,255,0.9);border-radius:50%;margin:16px 16px 0 0;z-index:10;transition:background 0.2s}
+.modal-close:hover{background:rgba(0,0,0,0.08)}
+.modal-close:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.modal-gallery{position:relative;overflow:hidden;border-radius:20px 20px 0 0}
+.modal-gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;display:none}
+.modal-gallery img.active{display:block}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;background:rgba(255,255,255,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;border:none;transition:background 0.2s}
+.gallery-nav:focus-visible{outline:3px solid var(--gold)}
+.gallery-nav:hover{background:#fff}
+.gallery-prev{left:12px}
+.gallery-next{right:12px}
+.modal-body{padding:32px}
+.modal-body h2{font-family:var(--ff-heading);font-size:1.8rem;margin-bottom:8px}
+.modal-body .modal-desc{color:var(--brown);margin-bottom:24px;font-size:1rem}
+.modal-section{margin-bottom:28px}
+.modal-section h3{font-family:var(--ff-heading);font-size:1.15rem;margin-bottom:12px;color:var(--green)}
+.highlight-grid{display:flex;flex-wrap:wrap;gap:10px}
+.highlight-tag{padding:6px 14px;background:rgba(0,0,0,0.04);border-radius:8px;font-size:0.85rem;display:flex;align-items:center;gap:6px}
+.modal-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.modal-list li{padding-left:20px;position:relative;font-size:0.95rem}
+.modal-list li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.modal-ctas{display:flex;gap:12px;flex-wrap:wrap;padding-top:8px}
+.modal-ctas .btn{flex:1;min-width:200px;justify-content:center}
+
+/* ========== SERVICES ========== */
+.services-section{padding:100px 40px;background:var(--green)}
+.services-section .section-header h2{color:var(--cream)}
+.services-section .section-header p{color:rgba(255,255,255,0.6)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
+.service-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px 28px;cursor:pointer;transition:transform 0.2s var(--ease-out-expo),border-color 0.3s,box-shadow 0.2s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.35s var(--ease-out-expo)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.15);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+.service-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.service-icon{font-size:2rem;margin-bottom:16px}
+.service-card h3{font-family:var(--ff-heading);color:var(--cream);font-size:1.15rem;margin-bottom:8px}
+.service-card p{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.5}
+
+/* ========== PACKAGES ========== */
+.packages-section{padding:100px 40px;max-width:1200px;margin:0 auto}
+.packages-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.package-card{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05);cursor:pointer;transition:transform 0.2s var(--ease-out-expo),box-shadow 0.3s}
+.package-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.1)}
+.package-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.package-card-img{aspect-ratio:16/10;overflow:hidden}
+.package-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s var(--ease-out-expo)}
+.package-card:hover .package-card-img img{transform:scale(1.05)}
+.package-card-body{padding:28px}
+.package-tag{font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.06em;color:var(--gold-dim);text-transform:uppercase;margin-bottom:8px}
+.package-card-body h3{font-family:var(--ff-heading);font-size:1.3rem;margin-bottom:8px}
+.package-card-body p{font-size:0.92rem;color:var(--brown);margin-bottom:16px;line-height:1.6}
+.package-card-body .link{color:var(--green);font-weight:600;font-size:0.9rem;display:inline-flex;align-items:center;gap:4px}
+
+/* ========== OFFER BANNER ========== */
+.offer-section{padding:80px 40px;background:oklch(40% 0.06 60);position:relative;overflow:hidden;text-align:center}
+.offer-section::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.03) 0px,rgba(255,255,255,0.03) 1px,transparent 1px,transparent 8px);pointer-events:none}
+.offer-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.offer-eyebrow{font-family:var(--ff-mono);font-size:0.85rem;letter-spacing:0.12em;color:var(--gold);margin-bottom:12px}
+.offer-content h2{font-family:var(--ff-heading);font-size:clamp(1.8rem,4vw,2.8rem);color:var(--cream);margin-bottom:8px}
+.offer-content .offer-sub{font-size:1.15rem;color:rgba(255,255,255,0.7);margin-bottom:36px}
+.countdown{display:flex;justify-content:center;gap:16px;margin-bottom:36px}
+.countdown-item{background:rgba(0,0,0,0.25);border-radius:12px;padding:16px 20px;min-width:72px;text-align:center}
+.countdown-item .num{font-family:var(--ff-heading);font-size:2rem;font-weight:700;color:var(--gold);display:block;line-height:1}
+.countdown-item .lbl{font-size:0.7rem;color:rgba(255,255,255,0.5);font-family:var(--ff-mono);letter-spacing:0.06em;text-transform:uppercase;margin-top:4px;display:block}
+.offer-fine{font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:20px}
+
+/* ========== REVIEWS ========== */
+.reviews-section{padding:100px 40px;max-width:1200px;margin:0 auto}
+.overall-rating{text-align:center;margin-bottom:48px}
+.overall-rating .big-num{font-family:var(--ff-heading);font-size:3.5rem;font-weight:700;color:var(--charcoal)}
+.stars{color:var(--gold);font-size:1.3rem;letter-spacing:2px}
+.overall-rating .count{font-size:0.9rem;color:var(--brown);margin-top:4px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review-card{background:#fff;border-radius:16px;padding:28px;position:relative;border:1px solid rgba(0,0,0,0.04);transition:transform 0.2s var(--ease-out-expo),box-shadow 0.2s}
+.review-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+.review-delete{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:var(--brown);opacity:0;transition:opacity 0.2s,background 0.2s;background:rgba(0,0,0,0.04)}
+.review-card:hover .review-delete{opacity:1}
+.review-delete:hover{background:rgba(220,50,50,0.1);color:#dc3232}
+.review-delete:focus-visible{opacity:1;outline:2px solid var(--gold);outline-offset:2px}
+.review-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1rem;margin-bottom:12px}
+.review-name{font-weight:600;font-size:0.95rem}
+.review-location{font-size:0.82rem;color:var(--brown)}
+.review-stars{color:var(--gold);font-size:0.9rem;margin:8px 0}
+.review-text{font-size:0.92rem;line-height:1.65;color:var(--charcoal);margin-bottom:10px}
+.review-date{font-size:0.78rem;color:var(--brown);font-family:var(--ff-mono)}
+.add-review-btn{display:block;margin:36px auto 0;padding:14px 36px}
+.review-form-modal .modal-body{padding:36px}
+.star-select{display:flex;gap:4px;margin-bottom:16px}
+.star-select span{font-size:1.8rem;cursor:pointer;color:rgba(0,0,0,0.15);transition:color 0.15s}
+.star-select span.active{color:var(--gold)}
+.form-field{margin-bottom:16px}
+.form-field label{display:block;font-size:0.85rem;font-weight:600;margin-bottom:6px;color:var(--charcoal)}
+.form-field input,.form-field textarea,.form-field select{width:100%;padding:12px 16px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-family:var(--ff-body);font-size:0.95rem;background:#fff;transition:border-color 0.2s}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{outline:none;border-color:var(--green)}
+.form-field textarea{resize:vertical;min-height:100px}
+
+/* ========== CONTACT ========== */
+.contact-section{padding:100px 40px;background:oklch(95% 0.01 90)}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+.contact-cards{display:flex;flex-direction:column;gap:16px}
+.contact-card{display:flex;align-items:center;gap:16px;padding:20px 24px;background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,0.04);transition:transform 0.15s var(--ease-out-expo)}
+.contact-card:hover{transform:translateX(4px)}
+.contact-card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.contact-card h4{font-size:0.9rem;font-weight:600;margin-bottom:2px}
+.contact-card p{font-size:0.85rem;color:var(--brown)}
+.map-placeholder{margin-top:16px;background:var(--green);border-radius:14px;height:160px;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--cream);font-family:var(--ff-mono);font-size:0.9rem}
+.contact-form{background:#fff;border-radius:18px;padding:36px;border:1px solid rgba(0,0,0,0.04)}
+.contact-form h3{font-family:var(--ff-heading);font-size:1.4rem;margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-bottom-ctas{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.contact-bottom-ctas .btn{width:100%;justify-content:center;padding:16px;font-size:1rem}
+
+/* ========== FOOTER ========== */
+.footer{background:var(--green);padding:64px 40px 32px;color:var(--cream)}
+.footer-top{display:flex;justify-content:space-between;align-items:start;max-width:1200px;margin:0 auto;gap:40px;flex-wrap:wrap}
+.footer-brand{max-width:300px}
+.footer-brand .nav-logo{margin-bottom:12px}
+.footer-brand p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.6}
+.footer-links h4{font-family:var(--ff-mono);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px}
+.footer-links ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{color:rgba(255,255,255,0.7);font-size:0.9rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-links a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.footer-contact p{color:rgba(255,255,255,0.7);font-size:0.9rem;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);margin-top:48px;padding-top:24px;text-align:center;max-width:1200px;margin-left:auto;margin-right:auto}
+.footer-bottom p{font-size:0.82rem;color:rgba(255,255,255,0.4);margin-bottom:6px}
+.footer-socials{display:flex;gap:12px;justify-content:center;margin-top:12px}
+.footer-socials a{color:rgba(255,255,255,0.5);font-size:0.9rem;padding:6px 14px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;transition:color 0.2s,border-color 0.2s}
+.footer-socials a:hover{color:var(--gold);border-color:var(--gold)}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1024px){
+.stays-row-1,.stays-row-3{grid-template-columns:1fr 1fr}
+.services-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+.navbar{padding:14px 20px}
+.navbar.scrolled{padding:10px 20px}
+.nav-links,.nav-actions{display:none}
+.nav-hamburger{display:flex}
+.hero-content{padding:0 20px}
+.stats-row{gap:24px}
+.stat-item{min-width:120px}
+.about-section{padding:60px 20px}
+.about-grid{grid-template-columns:1fr;gap:36px}
+.stays-section{padding:60px 20px}
+.stays-row-1,.stays-row-2,.stays-row-3{grid-template-columns:1fr}
+.services-section{padding:60px 20px}
+.services-grid{grid-template-columns:1fr}
+.packages-section{padding:60px 20px}
+.packages-grid{grid-template-columns:1fr}
+.reviews-grid{grid-template-columns:1fr}
+.contact-section{padding:60px 20px}
+.contact-inner{grid-template-columns:1fr}
+.form-row{grid-template-columns:1fr}
+.footer{padding:48px 20px 24px}
+.footer-top{flex-direction:column}
+.countdown{gap:10px}
+.countdown-item{min-width:60px;padding:12px 14px}
+.countdown-item .num{font-size:1.5rem}
+.modal{width:96%;border-radius:16px}
+.parallax-strip{background-attachment:scroll;height:30vh}
+.fab-btn span.fab-text{display:none}
+.fab-btn{padding:12px 14px}
+}
+@keyframes fadeSlideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<!-- ===== FAB ===== -->
+<div class="fab-container">
+<a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%20stay%20at%20Kodai%20Hills%20Stay" target="_blank" rel="noopener" class="fab-btn fab-wa" aria-label="Chat with us on WhatsApp">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.24 0-4.322-.724-6.016-1.952l-.42-.312-2.646.887.887-2.646-.312-.42A9.955 9.955 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+<span class="fab-text">Chat with Us</span>
+</a>
+<a href="tel:+918667715940" class="fab-btn fab-call" aria-label="Call us">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+<span class="fab-text">8667715940</span>
+</a>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+<a href="#" class="nav-logo" aria-label="Kodai Hills Stay Home">
+<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4L4 28h32L20 4z"/><path d="M14 28l6-10 6 10"/><path d="M20 18v-6"/><circle cx="20" cy="10" r="1.5" fill="currentColor" stroke="none"/></svg>
+Kodai Hills Stay
+</a>
+<ul class="nav-links">
+<li><a href="#stays">Stays</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#packages">Packages</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%20stay%20at%20Kodai%20Hills%20Stay" target="_blank" rel="noopener" class="nav-btn nav-btn-wa">WhatsApp</a>
+<a href="tel:+918667715940" class="nav-btn nav-btn-call">Call Now</a>
+</div>
+<button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+<span></span><span></span><span></span>
+</button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+<button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+<a href="#stays" class="mobile-menu-link">Stays</a>
+<a href="#services" class="mobile-menu-link">Services</a>
+<a href="#packages" class="mobile-menu-link">Packages</a>
+<a href="#reviews" class="mobile-menu-link">Reviews</a>
+<a href="#contact" class="mobile-menu-link">Contact</a>
+<div class="mobile-menu-actions">
+<a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%20stay%20at%20Kodai%20Hills%20Stay" target="_blank" rel="noopener" class="btn btn-green">WhatsApp</a>
+<a href="tel:+918667715940" class="btn btn-gold">Call Now</a>
+</div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+<div class="hero-bg" id="heroBg"></div>
+<div class="mist-layer"></div>
+<div class="mist-layer"></div>
+<div class="mist-layer"></div>
+<div class="hero-content">
+<div class="hero-badge">&#127956; Palani Hills, Tamil Nadu &middot; 2,133m</div>
+<h1 class="hero-title" id="heroTitle">Escape Into Kodaikanal's Misty Magic</h1>
+<p class="hero-sub">Handpicked cottages, camps &amp; packages in the Princess of Hill Stations</p>
+<div class="hero-ctas">
+<a href="#stays" class="btn btn-green">Explore Our Stays</a>
+<a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%20stay%20at%20Kodai%20Hills%20Stay" target="_blank" rel="noopener" class="btn btn-gold-outline">WhatsApp to Book</a>
+</div>
+</div>
+<div class="scroll-indicator">
+<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+Scroll to explore
+</div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats-section reveal-section">
+<div class="stats-row">
+<div class="stat-item reveal-child" style="--delay:0ms">
+<div class="stat-number" data-target="2133" data-suffix="m">0</div>
+<div class="stat-label">&#127956; Elevation</div>
+</div>
+<div class="stat-item reveal-child" style="--delay:100ms">
+<div class="stat-number" data-target="60" data-suffix="+" data-prefix="">0</div>
+<div class="stat-label">&#127807; Attractions</div>
+</div>
+<div class="stat-item reveal-child" style="--delay:200ms">
+<div class="stat-number" data-target="500" data-suffix="+" data-prefix="">0</div>
+<div class="stat-label">&#11088; Happy Guests</div>
+</div>
+<div class="stat-item reveal-child" style="--delay:300ms">
+<div class="stat-number" data-target="15" data-suffix="°C">0</div>
+<div class="stat-label">&#127777;&#65039; Avg Temperature</div>
+</div>
+</div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-section reveal-section">
+<div class="about-grid">
+<div class="about-text reveal-child" style="--delay:0ms">
+<p>Kodaikanal &mdash; Tamil for &ldquo;Gift of the Forest&rdquo; &mdash; sits at 2,133 metres in the Palani Hills of Tamil Nadu&rsquo;s Western Ghats. Established in 1845, this misty hill station enchants visitors with its star-shaped lake, towering Pillar Rocks, fragrant pine forests, Silver Cascade waterfall, and the mystical Guna Caves. Whether you seek the romance of dawn mist or the thrill of valley viewpoints &mdash; Kodai delivers it all.</p>
+</div>
+<div class="about-img reveal-child" style="--delay:150ms">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80" alt="Sunrise over Western Ghats mountains near Kodaikanal" loading="lazy">
+</div>
+</div>
+</section>
+<div class="parallax-strip" role="img" aria-label="Dense pine forest canopy in Kodaikanal"></div>
+
+<!-- ===== ACCOMMODATIONS ===== -->
+<section class="stays-section reveal-section" id="stays">
+<div class="section-header">
+<h2 class="reveal-child">Where Would You Like to Stay?</h2>
+<p class="reveal-child" style="--delay:100ms">Every stay is curated. Every view is real.</p>
+</div>
+<div class="stays-grid">
+<div class="stays-row-1">
+<div class="stay-card reveal-child" style="--delay:0ms" tabindex="0" data-stay="cottages" role="button" aria-label="Explore Private Cottages">
+<img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80" alt="Cozy cottage interior with warm lighting in Kodaikanal" loading="lazy">
+<div class="stay-card-overlay">
+<span class="stay-badge">Most Popular</span>
+<h3 class="stay-card-title">Private Cottages</h3>
+<p class="stay-card-desc">Your own slice of the hills &mdash; 1BHK to 10BHK</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+<div class="stay-card reveal-child" style="--delay:100ms" tabindex="0" data-stay="couple" role="button" aria-label="Explore Couple Rooms">
+<img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Romantic couple room with mountain view" loading="lazy">
+<div class="stay-card-overlay">
+<h3 class="stay-card-title">Couple Rooms</h3>
+<p class="stay-card-desc">Intimate escapes for two</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+</div>
+<div class="stays-row-2">
+<div class="stay-card reveal-child" style="--delay:0ms" tabindex="0" data-stay="honeymoon" role="button" aria-label="Explore Honeymoon Packages">
+<img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Decorated honeymoon suite with romantic ambience" loading="lazy">
+<div class="stay-card-overlay">
+<span class="stay-badge">Romantic</span>
+<h3 class="stay-card-title">Honeymoon Packages</h3>
+<p class="stay-card-desc">Begin forever in the mist</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+<div class="stay-card reveal-child" style="--delay:100ms" tabindex="0" data-stay="family" role="button" aria-label="Explore Family Rooms">
+<img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80" alt="Spacious family room with comfortable beds" loading="lazy">
+<div class="stay-card-overlay">
+<h3 class="stay-card-title">Family Rooms</h3>
+<p class="stay-card-desc">Spacious comfort for the whole family</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+<div class="stay-card reveal-child" style="--delay:200ms" tabindex="0" data-stay="dorm" role="button" aria-label="Explore Dormitory Rooms">
+<img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80" alt="Clean dormitory room with bunk beds" loading="lazy">
+<div class="stay-card-overlay">
+<h3 class="stay-card-title">Dormitory Rooms</h3>
+<p class="stay-card-desc">Budget-friendly group stays</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+</div>
+<div class="stays-row-3">
+<div class="stay-card reveal-child" style="--delay:0ms" tabindex="0" data-stay="tent" role="button" aria-label="Explore Tent Camp Stay">
+<img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80" alt="Tent camping under starry night sky" loading="lazy">
+<div class="stay-card-overlay">
+<span class="stay-badge">Adventure</span>
+<h3 class="stay-card-title">Tent Camp Stay</h3>
+<p class="stay-card-desc">Sleep under a blanket of stars</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+<div class="stay-card reveal-child" style="--delay:100ms" tabindex="0" data-stay="aframe" role="button" aria-label="Explore A-Frame Stay">
+<img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&q=80" alt="Iconic A-Frame triangular cabin surrounded by greenery" loading="lazy">
+<div class="stay-card-overlay">
+<span class="stay-badge">New</span>
+<h3 class="stay-card-title">A-Frame Stay</h3>
+<p class="stay-card-desc">The iconic triangular cabin</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+</div>
+<div class="stays-row-1">
+<div class="stay-card reveal-child" style="--delay:0ms" tabindex="0" data-stay="wooden" role="button" aria-label="Explore Wooden Stay">
+<img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800&q=80" alt="Rustic wooden cabin with modern amenities" loading="lazy">
+<div class="stay-card-overlay">
+<h3 class="stay-card-title">Wooden Stay</h3>
+<p class="stay-card-desc">Rustic warmth, modern comfort</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+<div class="stay-card reveal-child" style="--delay:100ms" tabindex="0" data-stay="village" role="button" aria-label="Explore Village Stay">
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80" alt="Terraced farmland in Poombarai village near Kodaikanal" loading="lazy">
+<div class="stay-card-overlay">
+<span class="stay-badge">Offbeat</span>
+<h3 class="stay-card-title">Poombarai &amp; Kookal Village Stay</h3>
+<p class="stay-card-desc">Offbeat. Authentic. Unforgettable.</p>
+<span class="stay-card-explore">Explore &rarr;</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Cottage Sub-Section -->
+<div class="cottage-sub" id="cottageSub">
+<h3 style="font-family:var(--ff-heading);font-size:1.5rem;margin-bottom:4px">Choose Your Cottage Size</h3>
+<p style="color:var(--brown);font-size:0.95rem">From intimate getaways to large group retreats</p>
+<div class="cottage-grid">
+<div class="cottage-card"><h4>1 BHK Cottage</h4><p>Ideal for couples &middot; 2 guests</p><a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%201BHK%20Cottage" target="_blank" rel="noopener" class="btn btn-green">Book Now</a></div>
+<div class="cottage-card"><h4>2 BHK Cottage</h4><p>Small families &middot; 4 guests</p><a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%202BHK%20Cottage" target="_blank" rel="noopener" class="btn btn-green">Book Now</a></div>
+<div class="cottage-card"><h4>3 BHK Cottage</h4><p>Families &middot; 6 guests</p><a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%203BHK%20Cottage" target="_blank" rel="noopener" class="btn btn-green">Book Now</a></div>
+<div class="cottage-card"><h4>5 BHK Cottage</h4><p>Large families &middot; 10 guests</p><a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%205BHK%20Cottage" target="_blank" rel="noopener" class="btn btn-green">Book Now</a></div>
+<div class="cottage-card"><h4>7 BHK Cottage</h4><p>Group retreats &middot; 14 guests</p><a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%207BHK%20Cottage" target="_blank" rel="noopener" class="btn btn-green">Book Now</a></div>
+<div class="cottage-card"><h4>10 BHK Cottage</h4><p>Full estate experience &middot; 20+ guests</p><a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%2010BHK%20Cottage" target="_blank" rel="noopener" class="btn btn-green">Book Now</a></div>
+</div>
+</div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-section reveal-section" id="services">
+<div class="section-header">
+<h2 class="reveal-child">We Take Care of Everything</h2>
+<p class="reveal-child" style="--delay:100ms">So you can focus on the views</p>
+</div>
+<div class="services-grid">
+<div class="service-card reveal-child" style="--delay:0ms" tabindex="0" data-service="pickup" role="button">
+<div class="service-icon">&#128663;</div>
+<h3>Pickup &amp; Drop Services</h3>
+<p>All railway stations &amp; bus stands covered</p>
+</div>
+<div class="service-card reveal-child" style="--delay:80ms" tabindex="0" data-service="cab" role="button">
+<div class="service-icon">&#128661;</div>
+<h3>Private Cab Services</h3>
+<p>Exclusive cabs for your comfort, any time</p>
+</div>
+<div class="service-card reveal-child" style="--delay:160ms" tabindex="0" data-service="food" role="button">
+<div class="service-icon">&#127857;</div>
+<h3>Homemade Food</h3>
+<p>Authentic Tamil meals cooked fresh daily</p>
+</div>
+<div class="service-card reveal-child" style="--delay:240ms" tabindex="0" data-service="campfire" role="button">
+<div class="service-icon">&#128293;</div>
+<h3>Campfire + Music</h3>
+<p>Evenings around the fire with live folk music</p>
+</div>
+<div class="service-card reveal-child" style="--delay:320ms" tabindex="0" data-service="sightseeing" role="button">
+<div class="service-icon">&#128248;</div>
+<h3>Sightseeing Packages</h3>
+<p>Pillar Rocks, Berijam Lake, Guna Caves &amp; more</p>
+</div>
+<div class="service-card reveal-child" style="--delay:400ms" tabindex="0" data-service="alllocation" role="button">
+<div class="service-icon">&#128205;</div>
+<h3>All Location Pickup/Drop</h3>
+<p>We pick you up anywhere across Tamil Nadu</p>
+</div>
+</div>
+</section>
+
+<!-- ===== PACKAGES ===== -->
+<section class="packages-section reveal-section" id="packages">
+<div class="section-header">
+<h2 class="reveal-child">Ready-Made Memories</h2>
+<p class="reveal-child" style="--delay:100ms">All-inclusive packages. Zero planning stress.</p>
+</div>
+<div class="packages-grid">
+<div class="package-card reveal-child" style="--delay:0ms" tabindex="0" data-package="weekend" role="button">
+<div class="package-card-img"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80" alt="Green valley hills perfect for a weekend escape" loading="lazy"></div>
+<div class="package-card-body">
+<div class="package-tag">2 Days / 1 Night &middot; Couple / Family</div>
+<h3>Weekend Escape</h3>
+<p>Stay + Meals + 1 Sightseeing trip. The perfect quick getaway to recharge in the hills.</p>
+<span class="link">View Full Package &rarr;</span>
+</div>
+</div>
+<div class="package-card reveal-child" style="--delay:100ms" tabindex="0" data-package="honeymoon" role="button">
+<div class="package-card-img"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Romantic decorated room for honeymoon couples" loading="lazy"></div>
+<div class="package-card-body">
+<div class="package-tag">3 Days / 2 Nights &middot; Couple</div>
+<h3>Honeymoon Special</h3>
+<p>Decorated room + Candle dinner + Campfire + Cab. Begin your forever story surrounded by mist.</p>
+<span class="link">View Full Package &rarr;</span>
+</div>
+</div>
+<div class="package-card reveal-child" style="--delay:200ms" tabindex="0" data-package="family" role="button">
+<div class="package-card-img"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80" alt="Misty Western Ghats landscape for family vacation" loading="lazy"></div>
+<div class="package-card-body">
+<div class="package-tag">4 Days / 3 Nights &middot; Family</div>
+<h3>Family Vacation</h3>
+<p>Cottage + All meals + 2 Sightseeing trips + Pickup. Everything arranged, nothing to worry about.</p>
+<span class="link">View Full Package &rarr;</span>
+</div>
+</div>
+<div class="package-card reveal-child" style="--delay:300ms" tabindex="0" data-package="adventure" role="button">
+<div class="package-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80" alt="Campfire night in the hills for adventure groups" loading="lazy"></div>
+<div class="package-card-body">
+<div class="package-tag">2 Days / 1 Night &middot; Groups</div>
+<h3>Adventure Camp</h3>
+<p>Tent stay + Campfire + Trekking + Music night. Bonds forged in the wild, under open skies.</p>
+<span class="link">View Full Package &rarr;</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== OFFER BANNER ===== -->
+<section class="offer-section reveal-section">
+<div class="offer-content">
+<div class="offer-eyebrow reveal-child">&#127881; EARLY BIRD OFFER</div>
+<h2 class="reveal-child" style="--delay:100ms">Book 7 Days in Advance</h2>
+<p class="offer-sub reveal-child" style="--delay:200ms">And Save 15% on Your Stay</p>
+<div class="countdown reveal-child" style="--delay:300ms" id="countdown">
+<div class="countdown-item"><span class="num" id="cdDays">00</span><span class="lbl">Days</span></div>
+<div class="countdown-item"><span class="num" id="cdHours">00</span><span class="lbl">Hours</span></div>
+<div class="countdown-item"><span class="num" id="cdMins">00</span><span class="lbl">Mins</span></div>
+<div class="countdown-item"><span class="num" id="cdSecs">00</span><span class="lbl">Secs</span></div>
+</div>
+<a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20grab%20the%20Early%20Bird%2015%25%20off%20offer" target="_blank" rel="noopener" class="btn btn-dark reveal-child" style="--delay:400ms">Grab This Offer on WhatsApp &rarr;</a>
+<p class="offer-fine">Offer valid for all stays. Subject to availability.</p>
+</div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews-section reveal-section" id="reviews">
+<div class="section-header">
+<h2 class="reveal-child">What Our Guests Say</h2>
+<p class="reveal-child" style="--delay:100ms">Real stays. Real stories.</p>
+</div>
+<div class="overall-rating reveal-child" style="--delay:150ms">
+<div class="big-num">4.9</div>
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="count">Based on 120+ reviews</div>
+</div>
+<div class="reviews-grid" id="reviewsGrid">
+<!-- Reviews injected by JS -->
+</div>
+<button class="btn btn-green add-review-btn reveal-child" style="--delay:200ms" id="addReviewBtn">Add Your Review</button>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section reveal-section" id="contact">
+<div class="contact-inner">
+<div>
+<h2 style="font-family:var(--ff-heading);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:28px" class="reveal-child">Get in Touch</h2>
+<div class="contact-cards">
+<a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%20stay%20at%20Kodai%20Hills%20Stay" target="_blank" rel="noopener" class="contact-card reveal-child" style="--delay:0ms">
+<div class="contact-card-icon" style="background:rgba(37,211,102,0.1)">&#128241;</div>
+<div><h4>WhatsApp</h4><p>8667715940</p></div>
+</a>
+<a href="tel:+918667715940" class="contact-card reveal-child" style="--delay:80ms">
+<div class="contact-card-icon" style="background:rgba(200,160,60,0.12)">&#128222;</div>
+<div><h4>Call Us</h4><p>8667715940</p></div>
+</a>
+<div class="contact-card reveal-child" style="--delay:160ms">
+<div class="contact-card-icon" style="background:rgba(0,0,0,0.04)">&#128205;</div>
+<div><h4>Location</h4><p>Kodaikanal, Dindigul District, Tamil Nadu &mdash; 624101</p></div>
+</div>
+<div class="contact-card reveal-child" style="--delay:240ms">
+<div class="contact-card-icon" style="background:rgba(0,0,0,0.04)">&#128336;</div>
+<div><h4>Response Time</h4><p>We reply within 15 minutes on WhatsApp</p></div>
+</div>
+</div>
+<div class="map-placeholder reveal-child" style="--delay:320ms">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+Kodaikanal, Tamil Nadu
+</div>
+</div>
+<div class="contact-form reveal-child" style="--delay:100ms">
+<h3>Quick Inquiry</h3>
+<form id="bookingForm" onsubmit="return false">
+<div class="form-row">
+<div class="form-field"><label for="cf-name">Full Name</label><input type="text" id="cf-name" placeholder="Your name" required></div>
+<div class="form-field"><label for="cf-phone">Phone Number</label><input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX" required></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="cf-checkin">Check-in Date</label><input type="date" id="cf-checkin" required></div>
+<div class="form-field"><label for="cf-checkout">Check-out Date</label><input type="date" id="cf-checkout" required></div>
+</div>
+<div class="form-row">
+<div class="form-field">
+<label for="cf-stay">Stay Type</label>
+<select id="cf-stay" required>
+<option value="">Select stay type</option>
+<option>Private Cottage</option>
+<option>Couple Room</option>
+<option>Honeymoon Package</option>
+<option>Family Room</option>
+<option>Dormitory Room</option>
+<option>Tent Camp Stay</option>
+<option>A-Frame Stay</option>
+<option>Wooden Stay</option>
+<option>Village Stay (Poombarai/Kookal)</option>
+</select>
+</div>
+<div class="form-field"><label for="cf-guests">Number of Guests</label><input type="number" id="cf-guests" min="1" max="50" placeholder="2" required></div>
+</div>
+<div class="form-field"><label for="cf-requests">Special Requests</label><textarea id="cf-requests" placeholder="Anything you'd like us to know..."></textarea></div>
+<button type="button" class="btn btn-green" style="width:100%;justify-content:center;padding:14px" onclick="submitBookingForm()">Send Booking Request via WhatsApp</button>
+</form>
+<div class="contact-bottom-ctas">
+<a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%20stay%20at%20Kodai%20Hills%20Stay" target="_blank" rel="noopener" class="btn btn-green">&#128172; Chat Directly on WhatsApp</a>
+<a href="tel:+918667715940" class="btn btn-gold">&#128222; Call Now: 8667715940</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+<div class="footer-top">
+<div class="footer-brand">
+<div class="nav-logo" style="color:var(--cream)">
+<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M20 4L4 28h32L20 4z"/><path d="M14 28l6-10 6 10"/><path d="M20 18v-6"/><circle cx="20" cy="10" r="1.5" fill="currentColor" stroke="none"/></svg>
+Kodai Hills Stay
+</div>
+<p>Where the Mist Meets Magic. Handpicked stays in the Princess of Hill Stations, Kodaikanal.</p>
+</div>
+<div class="footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#stays">Our Stays</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#packages">Packages</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-contact">
+<h4 style="font-family:var(--ff-mono);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px">Contact</h4>
+<p>&#128241; <a href="https://wa.me/918667715940" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.7)">WhatsApp: 8667715940</a></p>
+<p>&#128222; <a href="tel:+918667715940" style="color:rgba(255,255,255,0.7)">Call: 8667715940</a></p>
+<p>&#128205; Kodaikanal, Tamil Nadu 624101</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Kodai Hills Stay &middot; All Rights Reserved &middot; Kodaikanal, Tamil Nadu</p>
+<p>Princess of Hill Stations &#127956;</p>
+<div class="footer-socials">
+<a href="https://wa.me/918667715940" target="_blank" rel="noopener">WhatsApp</a>
+<a href="#" aria-label="Instagram">Instagram</a>
+</div>
+<p style="margin-top:16px;font-size:0.78rem">Made with &#10084;&#65039; in the Hills of Kodaikanal</p>
+</div>
+</footer>
+
+<!-- ===== MODAL TEMPLATE ===== -->
+<div class="modal-backdrop" id="modalBackdrop">
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+<button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+<div class="modal-gallery" id="modalGallery"></div>
+<div class="modal-body" id="modalBody"></div>
+</div>
+</div>
+
+<!-- ===== REVIEW MODAL ===== -->
+<div class="modal-backdrop review-form-modal" id="reviewModalBackdrop">
+<div class="modal" id="reviewModal" role="dialog" aria-modal="true">
+<button class="modal-close" id="reviewModalClose" aria-label="Close review form">&times;</button>
+<div class="modal-body">
+<h2 style="font-family:var(--ff-heading);font-size:1.6rem;margin-bottom:20px">Share Your Experience</h2>
+<div class="form-field"><label for="rv-name">Your Name</label><input type="text" id="rv-name" placeholder="Enter your name" required></div>
+<div class="form-field"><label for="rv-location">Your Location</label><input type="text" id="rv-location" placeholder="City, State" required></div>
+<div class="form-field">
+<label>Your Rating</label>
+<div class="star-select" id="starSelect">
+<span data-val="1">&#9733;</span><span data-val="2">&#9733;</span><span data-val="3">&#9733;</span><span data-val="4">&#9733;</span><span data-val="5">&#9733;</span>
+</div>
+</div>
+<div class="form-field"><label for="rv-text">Your Review</label><textarea id="rv-text" placeholder="Tell us about your stay..." required></textarea></div>
+<button class="btn btn-green" style="width:100%;justify-content:center;padding:14px" id="submitReviewBtn">Submit Review</button>
+</div>
+</div>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const stayData = {
+cottages: { title:'Private Cottages (1BHK–10BHK)', desc:'Your own slice of the hills — fully furnished cottages with mountain views, equipped kitchens, and complete privacy.', imgs:['https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80','https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600&q=80','https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=400&q=80'], highlights:['Mountain View','WiFi','Hot Water','Kitchen','Parking','TV','Balcony'], includes:['Fully furnished rooms','Fresh linen and towels','24/7 hot water','Mountain-facing balcony','Free parking space','Daily housekeeping'], rates:'1 BHK: From ₹X/night | 2 BHK: From ₹X/night | Contact for group rates' },
+couple: { title:'Couple Rooms', desc:'Intimate escapes designed for two, with cozy interiors and stunning valley views.', imgs:['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80','https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80','https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80'], highlights:['Valley View','WiFi','Hot Water','Room Service','Heater'], includes:['King-size bed','Private bathroom','Complimentary tea/coffee','Evening snacks','Mountain viewpoint access'], rates:'From ₹X/night for 2 guests' },
+honeymoon: { title:'Honeymoon Packages', desc:'Begin forever in the mist — specially decorated rooms with romantic add-ons.', imgs:['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80','https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80','https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80'], highlights:['Decorated Room','Candle Dinner','Campfire','Private Cab','Valley View'], includes:['Room decoration with flowers','Candle light dinner','Campfire evening','Private cab for sightseeing','Complimentary cake','Photography spot guidance'], rates:'From ₹X/package for 2N/3D' },
+family: { title:'Family Rooms', desc:'Spacious rooms designed for families, with all modern amenities and child-friendly spaces.', imgs:['https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80','https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80','https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&q=80'], highlights:['Spacious','WiFi','Hot Water','Parking','Kitchen','TV','Safe Zone'], includes:['Multiple beds configuration','Attached bathroom','Common area','Free parking','Child-safe environment','Extra mattress available'], rates:'From ₹X/night for up to 5 guests' },
+dorm: { title:'Dormitory Rooms', desc:'Budget-friendly bunk rooms perfect for groups, students, and solo travelers.', imgs:['https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80','https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80','https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80'], highlights:['Budget Friendly','Hot Water','Locker','Common Area','WiFi'], includes:['Individual bunk bed','Shared bathroom (clean)','Personal locker','Common hangout area','Blankets and linen','Power outlets per bed'], rates:'From ₹X/night per person' },
+tent: { title:'Tent Camp Stay', desc:'Sleep under a blanket of stars — real camping experience with safety and comfort.', imgs:['https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80','https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80','https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&q=80'], highlights:['Stargazing','Campfire','Music','Fresh Air','Safe'], includes:['Quality tent with bedding','Campfire evening','Music and folk songs','Morning tea in tent','Dinner and breakfast','Guided night walk'], rates:'From ₹X/night per person' },
+aframe: { title:'A-Frame Stay', desc:'The iconic triangular cabin — Instagram-worthy, cozy, and completely unique.', imgs:['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&q=80','https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80','https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&q=80'], highlights:['Unique Design','Mountain View','WiFi','Hot Water','Photo Worthy'], includes:['A-Frame cabin for 2','Attached bathroom','Mountain-facing window','Complimentary breakfast','Free parking','Bonfire access'], rates:'From ₹X/night for 2 guests' },
+wooden: { title:'Wooden Stay', desc:'Rustic warmth meets modern comfort — classic wooden cabins nestled in the hills.', imgs:['https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800&q=80','https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=600&q=80','https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=400&q=80'], highlights:['Wooden Interiors','Warm','WiFi','Hot Water','Nature View','Parking'], includes:['Fully wooden cabin','Cozy bedding','Hot water 24/7','Nature trail access','Evening tea','Free parking'], rates:'From ₹X/night' },
+village: { title:'Poombarai & Kookal Village Stay', desc:'Offbeat. Authentic. Unforgettable. Experience real hill village life away from tourist crowds.', imgs:['https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&q=80'], highlights:['Offbeat','Authentic','Farm View','Local Food','Trekking','Cultural'], includes:['Village homestay room','All local meals included','Farm walk and village tour','Stunning viewpoint access','Pickup from Kodaikanal','Cultural interaction with locals'], rates:'From ₹X/night (all inclusive)' }
+};
+
+const serviceData = {
+pickup: { title:'Pickup & Drop Services', desc:'We cover all major railway stations and bus stands including Kodaikanal Road, Dindigul, Madurai, and Palani. Our drivers know every route and will ensure you reach your stay comfortably.', includes:['Kodaikanal Road Railway Station','Dindigul Junction','Madurai Bus Stand / Airport','Palani Bus Stand','Comfortable vehicles','Experienced hill-road drivers'], timing:'Available 24/7. Pre-booking recommended.' },
+cab: { title:'Private Cab Services', desc:'Dedicated cabs available for sightseeing, point-to-point travel, and multi-day rentals. Clean vehicles, friendly drivers, and flexible timings.', includes:['Half-day and full-day packages','Multi-day rental available','Sightseeing routes covered','Airport/station transfers','AC and Non-AC options','Child seat on request'], timing:'6 AM to 10 PM. Night trips on special request.' },
+food: { title:'Homemade Food', desc:'Authentic South Indian home-cooked meals prepared fresh daily. From comforting parupu sadam to spicy Chettinad chicken — we serve food that tastes like home.', includes:['Breakfast, Lunch & Dinner','Vegetarian and Non-vegetarian','South Indian specialties','Fresh ingredients daily','Packed meals for sightseeing','Special diet requests accommodated'], timing:'Breakfast: 8-10 AM | Lunch: 12:30-2 PM | Dinner: 7:30-9:30 PM' },
+campfire: { title:'Campfire + Music', desc:'Gather around a crackling campfire under the starlit Kodaikanal sky. Live folk music, songs, and the warmth of the hills make for unforgettable evenings.', includes:['Bonfire setup with seating','Live folk music performance','Group songs and games','Hot snacks and beverages','Safe fire management','Open for all guests'], timing:'7:30 PM onwards. Weather permitting.' },
+sightseeing: { title:'Sightseeing Packages', desc:'Explore the best of Kodaikanal with our curated sightseeing trips. From the iconic Pillar Rocks to the restricted Berijam Lake, we cover it all.', includes:['Pillar Rocks & Green Valley View','Berijam Lake (permit arranged)','Guna Caves (Devil\'s Kitchen)','Silver Cascade Waterfall','Coaker\'s Walk','Pine Forest & Moir Point'], timing:'Morning trip: 9 AM | Afternoon trip: 2 PM | Full day available.' },
+alllocation: { title:'All Location Pickup/Drop', desc:'No matter where you are in Tamil Nadu, we will come get you. Chennai, Bangalore border, Trichy, Coimbatore — just tell us and our vehicle will be there.', includes:['Chennai pickup available','Coimbatore pickup available','Trichy & Madurai covered','Bangalore border pickup','Group vehicle options','Comfortable long-distance travel'], timing:'24/7 availability. Book at least 24 hours in advance.' }
+};
+
+const packageData = {
+weekend: { title:'Weekend Escape', tag:'2 Days / 1 Night', itinerary:['Day 1: Arrival & check-in. Evening sightseeing to Coaker\'s Walk and Bryant Park. Campfire night with music.','Day 2: Morning breakfast with mountain view. Half-day sightseeing to Pillar Rocks, Green Valley, and Silver Cascade. Lunch and check-out.'], includes:['1 night stay in selected room','All meals (1 dinner, 1 breakfast, 1 lunch)','1 half-day sightseeing trip','Campfire evening','Free parking'], excludes:['Pickup/drop from station','Personal expenses','Extra sightseeing trips'] },
+honeymoon: { title:'Honeymoon Special', tag:'3 Days / 2 Nights', itinerary:['Day 1: Arrival with welcome drink. Room decorated with flowers. Candle light dinner on the terrace.','Day 2: Breakfast. Full-day sightseeing with private cab — Pillar Rocks, Berijam Lake, Pine Forest. Campfire and music in the evening.','Day 3: Sunrise viewpoint visit. Breakfast and check-out with sweet memories.'], includes:['2 nights in decorated couple room','All meals included','Room decoration & candle dinner','Private cab for sightseeing','Campfire evening with music','Complimentary cake'], excludes:['Pickup/drop from station','Berijam Lake permit fee','Personal shopping expenses'] },
+family: { title:'Family Vacation', tag:'4 Days / 3 Nights', itinerary:['Day 1: Arrival & check-in to cottage. Evening walk to nearby viewpoint. Welcome dinner.','Day 2: Full-day sightseeing — Pillar Rocks, Green Valley, Silver Cascade, Guna Caves. Packed lunch included. Evening campfire.','Day 3: Berijam Lake trip (half day). Afternoon free for shopping at local market. Homemade dinner.','Day 4: Morning breakfast. Check-out and drop to station.'], includes:['3 nights in family cottage','All meals for entire family','2 sightseeing trips with cab','Pickup & drop from station','Campfire evening','Free parking and WiFi'], excludes:['Berijam Lake permit fee','Entry tickets to paid attractions','Personal shopping'] },
+adventure: { title:'Adventure Camp', tag:'2 Days / 1 Night', itinerary:['Day 1: Arrival by afternoon. Trek to campsite through pine forest. Tent setup. Evening campfire with music, snacks, and stargazing. Dinner under the stars.','Day 2: Early morning tea in tent. Sunrise trek to viewpoint. Breakfast. Nature walk and departure.'], includes:['1 night tent camping','Dinner and breakfast','Campfire with live music','Guided trekking','Sleeping bags & mattress','Morning tea in tent'], excludes:['Transportation to campsite','Personal trekking gear','Rain gear (bring your own)'] }
+};
+
+const reviewsData = [
+{name:'Priya Rajan',location:'Chennai',stars:5,text:'The A-Frame cabin was magical! Woke up to mist literally inside our room. The caretaker was incredibly helpful. Homemade food was the highlight — parupu sadam and rasam felt like home. Will definitely come back!',date:'April 2025',color:'oklch(55% 0.15 30)'},
+{name:'Karthik Selvam',location:'Coimbatore',stars:5,text:'Booked the honeymoon package and it exceeded all expectations. The room decoration, campfire, music — everything was perfectly arranged. The WhatsApp booking was super easy. Thank you Kodai Hills Stay!',date:'March 2025',color:'oklch(55% 0.12 145)'},
+{name:'Ananya & Vikram',location:'Bangalore',stars:5,text:'Poombarai village stay was the most unique experience of our lives. No phone signal, just mountains, fresh air, and homemade food. Pickup service was on time and cab driver knew every viewpoint!',date:'March 2025',color:'oklch(55% 0.14 250)'},
+{name:'Suresh Kumar',location:'Madurai',stars:4,text:'Good value for money. Family room was spacious for 5 people. The sightseeing package covered Pillar Rocks, Berijam Lake and Green Valley. Kids loved the campfire night. Highly recommended.',date:'February 2025',color:'oklch(55% 0.12 60)'},
+{name:'Deepa Moorthy',location:'Trichy',stars:5,text:'Stayed in the tent camp and it was absolutely beautiful. The staff arranged everything — from bedding to morning tea inside the tent. Night sky was breathtaking. One of the best decisions ever!',date:'January 2025',color:'oklch(55% 0.15 320)'},
+{name:'Ravi & Family',location:'Hyderabad',stars:5,text:'3BHK private cottage was perfect for our group of 8. Fully equipped kitchen, great mountain view, and helpful staff. The pickup from Kodaikanal Road station was punctual. 10/10 experience!',date:'January 2025',color:'oklch(55% 0.1 200)'}
+];
+
+/* ===== NAVBAR SCROLL ===== */
+const navbar = document.getElementById('navbar');
+const heroBg = document.getElementById('heroBg');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 80) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+  heroBg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+}, {passive:true});
+
+/* ===== MOBILE MENU ===== */
+const mobileMenu = document.getElementById('mobileMenu');
+document.getElementById('navHamburger').addEventListener('click', () => mobileMenu.classList.add('open'));
+document.getElementById('mobileMenuClose').addEventListener('click', () => mobileMenu.classList.remove('open'));
+document.querySelectorAll('.mobile-menu-link').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+/* ===== HERO TEXT STAGGER ===== */
+const heroTitle = document.getElementById('heroTitle');
+const words = heroTitle.textContent.trim().split(/\s+/);
+heroTitle.innerHTML = words.map((w,i) => `<span class="word" style="transition-delay:${i*0.15}s">${w}</span>`).join(' ');
+window.addEventListener('load', () => {
+  setTimeout(() => document.querySelectorAll('.hero-title .word').forEach(w => w.classList.add('show')), 200);
+});
+
+/* ===== SCROLL REVEAL ===== */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('is-visible');
+      e.target.querySelectorAll('.reveal-child').forEach((c,i) => {
+        const d = parseInt(getComputedStyle(c).getPropertyValue('--delay')) || i*100;
+        c.style.transitionDelay = d + 'ms';
+      });
+      revealObs.unobserve(e.target);
+    }
+  });
+}, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal-section').forEach(s => revealObs.observe(s));
+
+/* ===== COUNTER ANIMATION ===== */
+let countersAnimated = false;
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting && !countersAnimated){
+      countersAnimated = true;
+      document.querySelectorAll('.stat-number').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const dur = 2000;
+        const start = performance.now();
+        function tick(now){
+          const t = Math.min((now - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.floor(target * ease) + suffix;
+          if(t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+  });
+}, {threshold:0.3});
+document.querySelector('.stats-section') && counterObs.observe(document.querySelector('.stats-section'));
+
+/* ===== CARD 3D TILT ===== */
+function initTilt(selector){
+  document.querySelectorAll(selector).forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) scale(1)';
+    });
+  });
+}
+initTilt('.stay-card');
+initTilt('.service-card');
+initTilt('.package-card');
+
+/* ===== MODAL SYSTEM ===== */
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modal = document.getElementById('modal');
+const modalGallery = document.getElementById('modalGallery');
+const modalBody = document.getElementById('modalBody');
+let currentGalleryIndex = 0;
+let currentGalleryImages = [];
+
+function openModal(galleryHTML, bodyHTML){
+  modalGallery.innerHTML = galleryHTML;
+  modalBody.innerHTML = bodyHTML;
+  modalBackdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  currentGalleryIndex = 0;
+  currentGalleryImages = modalGallery.querySelectorAll('img');
+  if(currentGalleryImages.length) currentGalleryImages[0].classList.add('active');
+  modalGallery.querySelectorAll('.gallery-nav').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const dir = btn.classList.contains('gallery-prev') ? -1 : 1;
+      currentGalleryImages[currentGalleryIndex].classList.remove('active');
+      currentGalleryIndex = (currentGalleryIndex + dir + currentGalleryImages.length) % currentGalleryImages.length;
+      currentGalleryImages[currentGalleryIndex].classList.add('active');
+    });
+  });
+}
+function closeModal(){
+  modalBackdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', (e) => { if(e.target === modalBackdrop) closeModal(); });
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+function galleryHTML(imgs, alt){
+  return imgs.map((src,i) => `<img src="${src}" alt="${alt} photo ${i+1}" loading="lazy">`).join('') + `<button class="gallery-nav gallery-prev" aria-label="Previous image">&#8249;</button><button class="gallery-nav gallery-next" aria-label="Next image">&#8250;</button>`;
+}
+function modalCTAs(){
+  return `<div class="modal-ctas"><a href="https://wa.me/918667715940?text=Hi%2C%20I%20want%20to%20book%20a%20stay%20at%20Kodai%20Hills%20Stay" target="_blank" rel="noopener" class="btn btn-green">&#128242; Book via WhatsApp</a><a href="tel:+918667715940" class="btn btn-gold">&#128222; Call to Book</a></div>`;
+}
+
+/* Stay Card Clicks */
+document.querySelectorAll('.stay-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.stay;
+    if(key === 'cottages'){
+      const sub = document.getElementById('cottageSub');
+      sub.classList.toggle('open');
+      if(sub.classList.contains('open')) sub.scrollIntoView({behavior:'smooth', block:'nearest'});
+      return;
+    }
+    const d = stayData[key];
+    if(!d) return;
+    const body = `<h2>${d.title}</h2><p class="modal-desc">${d.desc}</p>
+    <div class="modal-section"><h3>Highlights</h3><div class="highlight-grid">${d.highlights.map(h => `<span class="highlight-tag">${h}</span>`).join('')}</div></div>
+    <div class="modal-section"><h3>What's Included</h3><ul class="modal-list">${d.includes.map(i => `<li>${i}</li>`).join('')}</ul></div>
+    <div class="modal-section"><h3>Rates</h3><p style="font-size:0.95rem;color:var(--brown)">${d.rates}</p></div>
+    ${modalCTAs()}`;
+    openModal(galleryHTML(d.imgs, d.title), body);
+  });
+  card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); card.click(); }});
+});
+
+/* Service Card Clicks */
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.service;
+    const d = serviceData[key];
+    if(!d) return;
+    const body = `<h2>${d.title}</h2><p class="modal-desc">${d.desc}</p>
+    <div class="modal-section"><h3>What's Included</h3><ul class="modal-list">${d.includes.map(i => `<li>${i}</li>`).join('')}</ul></div>
+    <div class="modal-section"><h3>Timing</h3><p style="font-size:0.95rem;color:var(--brown)">${d.timing}</p></div>
+    ${modalCTAs()}`;
+    openModal('', body);
+  });
+  card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); card.click(); }});
+});
+
+/* Package Card Clicks */
+document.querySelectorAll('.package-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.package;
+    const d = packageData[key];
+    if(!d) return;
+    const body = `<h2>${d.title}</h2><div class="package-tag" style="margin-bottom:16px">${d.tag}</div>
+    <div class="modal-section"><h3>Day-by-Day Itinerary</h3><ul class="modal-list">${d.itinerary.map(i => `<li>${i}</li>`).join('')}</ul></div>
+    <div class="modal-section"><h3>Inclusions</h3><ul class="modal-list">${d.includes.map(i => `<li>${i}</li>`).join('')}</ul></div>
+    <div class="modal-section"><h3>Exclusions</h3><ul class="modal-list">${d.excludes.map(i => `<li style="opacity:0.6">${i}</li>`).join('')}</ul></div>
+    ${modalCTAs()}`;
+    openModal('', body);
+  });
+  card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); card.click(); }});
+});
+
+/* ===== COUNTDOWN ===== */
+const countdownTarget = new Date();
+countdownTarget.setDate(countdownTarget.getDate() + 30);
+function updateCountdown(){
+  const diff = countdownTarget - new Date();
+  if(diff <= 0) return;
+  document.getElementById('cdDays').textContent = String(Math.floor(diff / 86400000)).padStart(2,'0');
+  document.getElementById('cdHours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+  document.getElementById('cdMins').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+  document.getElementById('cdSecs').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ===== REVIEWS ===== */
+const reviewsGrid = document.getElementById('reviewsGrid');
+function createReviewCard(r){
+  const initials = r.name.split(' ').map(w => w[0]).join('').slice(0,2);
+  const stars = '✳'.repeat(0) + '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars);
+  const card = document.createElement('div');
+  card.className = 'review-card';
+  card.innerHTML = `<button class="review-delete" aria-label="Delete review" title="Remove review">🗑️</button>
+  <div class="review-avatar" style="background:${r.color}">${initials}</div>
+  <div class="review-name">${r.name}</div>
+  <div class="review-location">${r.location}</div>
+  <div class="review-stars">${'&#9733;'.repeat(r.stars)}${'&#9734;'.repeat(5-r.stars)}</div>
+  <p class="review-text">${r.text}</p>
+  <div class="review-date">${r.date}</div>`;
+  card.querySelector('.review-delete').addEventListener('click', (e) => {
+    e.stopPropagation();
+    if(confirm('Remove this review?')){
+      card.style.transition = 'opacity 0.3s, transform 0.3s, max-height 0.4s 0.2s, padding 0.4s 0.2s, margin 0.4s 0.2s';
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        card.style.maxHeight = '0';
+        card.style.padding = '0';
+        card.style.margin = '0';
+        card.style.overflow = 'hidden';
+        setTimeout(() => card.remove(), 400);
+      }, 300);
+    }
+  });
+  return card;
+}
+reviewsData.forEach(r => reviewsGrid.appendChild(createReviewCard(r)));
+
+/* Review Modal */
+const reviewModalBackdrop = document.getElementById('reviewModalBackdrop');
+document.getElementById('addReviewBtn').addEventListener('click', () => {
+  reviewModalBackdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('reviewModalClose').addEventListener('click', () => {
+  reviewModalBackdrop.classList.remove('open');
+  document.body.style.overflow = '';
+});
+reviewModalBackdrop.addEventListener('click', (e) => { if(e.target === reviewModalBackdrop){ reviewModalBackdrop.classList.remove('open'); document.body.style.overflow = ''; }});
+
+let selectedStars = 0;
+document.querySelectorAll('#starSelect span').forEach(star => {
+  star.addEventListener('click', () => {
+    selectedStars = parseInt(star.dataset.val);
+    document.querySelectorAll('#starSelect span').forEach((s,i) => {
+      s.classList.toggle('active', i < selectedStars);
+    });
+  });
+});
+
+document.getElementById('submitReviewBtn').addEventListener('click', () => {
+  const name = document.getElementById('rv-name').value.trim();
+  const location = document.getElementById('rv-location').value.trim();
+  const text = document.getElementById('rv-text').value.trim();
+  if(!name || !location || !text || !selectedStars){ alert('Please fill all fields and select a rating.'); return; }
+  const colors = ['oklch(55% 0.15 30)','oklch(55% 0.12 145)','oklch(55% 0.14 250)','oklch(55% 0.12 60)','oklch(55% 0.15 320)','oklch(55% 0.1 200)'];
+  const newReview = { name, location, stars: selectedStars, text, date: new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'}), color: colors[Math.floor(Math.random()*colors.length)] };
+  const card = createReviewCard(newReview);
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  reviewsGrid.prepend(card);
+  requestAnimationFrame(() => {
+    card.style.transition = 'opacity 0.4s var(--ease-out-quart), transform 0.4s var(--ease-out-quart)';
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+  });
+  document.getElementById('rv-name').value = '';
+  document.getElementById('rv-location').value = '';
+  document.getElementById('rv-text').value = '';
+  selectedStars = 0;
+  document.querySelectorAll('#starSelect span').forEach(s => s.classList.remove('active'));
+  reviewModalBackdrop.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+/* ===== BOOKING FORM ===== */
+function submitBookingForm(){
+  const name = document.getElementById('cf-name').value.trim();
+  const phone = document.getElementById('cf-phone').value.trim();
+  const checkin = document.getElementById('cf-checkin').value;
+  const checkout = document.getElementById('cf-checkout').value;
+  const stay = document.getElementById('cf-stay').value;
+  const guests = document.getElementById('cf-guests').value;
+  const requests = document.getElementById('cf-requests').value.trim();
+  if(!name || !phone || !checkin || !checkout || !stay || !guests){
+    alert('Please fill in all required fields.');
+    return;
+  }
+  const msg = `Hi, I'd like to book a stay at Kodai Hills Stay!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Check-in:* ${encodeURIComponent(checkin)}%0A*Check-out:* ${encodeURIComponent(checkout)}%0A*Stay Type:* ${encodeURIComponent(stay)}%0A*Guests:* ${encodeURIComponent(guests)}${requests ? '%0A*Special Requests:* ' + encodeURIComponent(requests) : ''}`;
+  window.open(`https://wa.me/918667715940?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
